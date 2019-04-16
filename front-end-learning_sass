@@ -1,0 +1,83 @@
+###Sass 快速入门
+1.Sass文件后缀名有2中sass（不使用大括号--{}和分号--；）,scss(和css格式差不多)
+
+2.可以使用变量$变量名（$highlight-color: #F90;）
+
+3.嵌套CSS 规则
+#content {
+  article {
+    h1 { color: #333 }
+    p { margin-bottom: 1.4em }
+  }
+  aside { background-color: #EEE }
+}
+
+4.父选择器的标识符&
+article a {
+  color: blue;
+  :hover { color: red }
+}
+
+5.群组选择器的嵌套
+.container {
+  h1, h2, h3 {margin-bottom: .8em}
+}
+
+6.子组合选择器和同层组合选择器：>、+和~的嵌套
+article {
+  ~ article { border-top: 1px dashed #ccc }
+  > section { background: #eee }
+  dl > {
+    dt { color: #333 }
+    dd { color: #555 }
+  }
+  nav + & { margin-top: 0 }
+}
+
+7.嵌套属性
+nav {
+  border: {
+  style: solid;
+  width: 1px;
+  color: #ccc;
+  }
+}
+
+8.默认变量值（用于变量）
+$fancybox-width: 400px !default;
+.fancybox {
+    width: $fancybox-width;
+}
+
+9.静默注释（/*...*/）
+
+10.混合器
+@mixin rounded-corners {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+notice {
+  background-color: green;
+  border: 2px solid #00aa00;
+  @include rounded-corners;
+}
+
+给混合器传参
+@mixin link-colors($normal, $hover, $visited) {
+  color: $normal;
+  &:hover { color: $hover; }
+  &:visited { color: $visited; }
+}
+
+a {
+  @include link-colors(blue, red, green);
+}
+
+默认参数值
+@mixin link-colors($normal,$hover: $normal,$visited: $normal){
+  color: $normal;
+  &:hover { color: $hover; }
+  &:visited { color: $visited; }
+}
