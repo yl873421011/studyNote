@@ -1,0 +1,7 @@
+###Vue 和 AngularJs编码中遇到的坑
+
+1.Vue中获取事件触发对象e.target-----AngularJs中使用$event.target获取
+
+2.v-for中(item,key) in itemList------AngularJs中(index,item) in itemList
+
+3.Vue中动态绑定class :class="{isActive:isA}"-----AngularJs中 ng-class="{'isActive':isA==1}"
