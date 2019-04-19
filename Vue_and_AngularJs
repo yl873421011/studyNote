@@ -5,3 +5,5 @@
 2.v-for中(item,key) in itemList------AngularJs中(index,item) in itemList
 
 3.Vue中动态绑定class :class="{isActive:isA}"-----AngularJs中 ng-class="{'isActive':isA==1}"
+
+4.Vue中过滤器带参数...|filterA(...arg)----AngularJs中带参...|filter:argA:argB
